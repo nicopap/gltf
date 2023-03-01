@@ -53,6 +53,23 @@ pub struct Material {
         skip_serializing_if = "Option::is_none"
     )]
     pub ior: Option<Ior>,
+
+    #[cfg(feature = "KHR_materials_parallax_mapping")]
+    #[serde(
+        default,
+        rename = "KHR_materials_parallax_mapping",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub parallax_mapping: Option<ParallaxMapping>,
+}
+
+#[cfg(feature = "KHR_materials_parallax_mapping")]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, Validate)]
+#[serde(default, rename_all = "camelCase")]
+pub struct ParallaxMapping {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    height_texture: Option<texture::Info>,
+    height_factor: StrengthFactor,
 }
 
 /// A set of parameter values that are used to define the metallic-roughness
