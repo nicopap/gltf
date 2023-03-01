@@ -8,6 +8,7 @@ The `gltf` crate adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Unreleased
 
+- Add the [`KHR_materials_parallax_mapping`](https://github.com/KhronosGroup/glTF/pull/2196) extension
 - Fix relative file path imports with url encoded characters.
 - Update dependency on `image` crate from 0.23 to 0.24.
 - Fix bounds calculation in export example.
